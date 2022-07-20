@@ -8,21 +8,21 @@ Tiap Pertemuan hanya 2 x 45 Menit
 ## Daftar Materi Berdasarkan Commit Git, Cek History Git
 
 ### Pertemuan #1
-Inisiasi Project
-Integrasi Template
-Make Simple Routing
+1. Inisiasi Project
+2. Integrasi Template
+3. Make Simple Routing
 
 ### Pertemuan #2
-Buat Konfig Terpisah
-Buat Proses File Terpisah
-Buat File View Terpisah
+4. Buat Konfig Terpisah
+5. Buat Proses File Terpisah
+6. Buat File View Terpisah
 
 ### Pertemuan #3
-Simple Authentication
-Simple Authorization
-User Privilege
+7. Simple Authentication
+8. Simple Authorization
+9. User Privilege
 
 ### Pertemuan #4
-Dashboard
-Download PDF dengan FPDF
-Patching Bug
+10. Dashboard
+11. Download PDF dengan FPDF
+12. Patching Bug
