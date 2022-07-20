@@ -1,8 +1,8 @@
-# PHP8.1-project-based-learning
+# PHP8.1 Project Based Learning
 
 Praktikum Pembuatan Aplikasi Web User Management Berbasis PHP Native dengan Bahasa Pemrograman PHP 8.1
 
-Waktu Pembelajaran
+## Waktu Pembelajaran
 Tiap Pertemuan hanya 2 x 45 Menit
 
 ## Daftar Materi Berdasarkan Commit Git, Cek History Git
