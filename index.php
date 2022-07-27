@@ -16,7 +16,7 @@
     <meta name="description"
         content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
+    <title>SPK KMEANS</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png" />
     <!-- Custom CSS -->
@@ -459,6 +459,24 @@
             switch ($path) {
                 case 'dashboard':
                     include_once 'pages/dashboard.php';
+                    break;
+
+                case 'isi-kuisioner':
+                    include_once 'pages/answer/add.php';
+                    break;
+                    
+                // manajemen master kuisioner
+                case 'kuisioner':
+                    include_once 'pages/kuisioner/index.php';
+                    break;
+                case 'kuisioner-tambah':
+                    include_once 'pages/kuisioner/add.php';
+                    break;
+                case 'kuisioner-edit':
+                    include_once 'pages/kuisioner/edit.php';
+                    break;
+                case 'kuisioner-hapus':
+                    include_once 'pages/kuisioner/delete.php';
                     break;
 
                 // manajemen master keluarga
