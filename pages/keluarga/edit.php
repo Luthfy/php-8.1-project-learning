@@ -3,18 +3,38 @@
 
 $id = $_GET['id'];
 
+$queryKecamatan = "SELECT * FROM tb_kecamatan";
+$resultKecamatan = $connection->query($queryKecamatan);
+
+$queryKelurahan  = "SELECT * FROM tb_kelurahan";
+$resultKelurahan = $connection->query($queryKelurahan);
+
+$queryRt  = "SELECT * FROM tb_rt";
+$resultRt = $connection->query($queryRt);
+
 if (@$_POST['submit']) {
         
-    $nik    = $_POST['nik_kepala_keluarga'];
-    $nama   = $_POST['nama_kepala_keluarga'];
-    $jumlah = $_POST['jumlah_anggota_keluarga'];
+    $nik        = $_POST['nik'];
+    $nama       = $_POST['nama'];
+    $tglLahir   = $_POST['tanggal_lahir'];
+    $kecId      = $_POST['kecamatan_id'];
+    $kelId      = $_POST['kelurahan_id'];
+    $rtId       = $_POST['rt_id'];
 
-    $query = "UPDATE keluarga SET nik_kepala_keluarga='$nik', nama_kepala_keluarga='$nama', jumlah_anggota_keluarga='$jumlah' WHERE id = '$id'";
+    $query = "UPDATE tb_kepkel SET nik='$nik', nama='$nama', kecamatan_id='$kecId', kelurahan_id='$kelId', rt_id='$rtId', tanggal_lahir='$tglLahir' WHERE id = '$id'";
 
     $result = $connection->query($query);
+    
+    if ($result) {
+        ?>
+        <script type="text/javascript">
+            window.location.href = location.origin + location.pathname + "?page=keluarga";
+        </script>
+        <?php
+    }
 }
 
-$query  = "SELECT * FROM keluarga WHERE id = '$id'";
+$query  = "SELECT * FROM tb_kepkel WHERE id = '$id'";
 
 $result = $connection->query($query);
 $row    = $result->fetch_assoc();
@@ -51,22 +71,64 @@ $row    = $result->fetch_assoc();
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="form-group row">
+                    <div class="form-group row">
                             <label class="col-md-3 mt-3">NIK Kepala Keluarga</label>
                             <div class="col-md-9">
-                                <input type="text" name="nik_kepala_keluarga" class="form-control" id="NikKepalaKeluarga" placeholder="NIK Kepala Keluarga" value="<?= $row['nik_kepala_keluarga'] ?>" />
+                                <input type="text" name="nik" class="form-control" id="nik" placeholder="NIK Kepala Keluarga" value="<?= $row['nik'] ?>" />
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-3 mt-3">Nama Kepala Keluarga</label>
                             <div class="col-md-9">
-                                <input type="text" name="nama_kepala_keluarga" class="form-control" id="NamaKepalaKeluarga" placeholder="Nama Kepala Keluarga" value="<?= $row['nama_kepala_keluarga'] ?>" />
+                                <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Kepala Keluarga" value="<?= $row['nama'] ?>" />
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-3 mt-3">Jumlah Anggota Keluarga</label>
+                            <label class="col-md-3 mt-3">Tanggal Lahir</label>
                             <div class="col-md-9">
-                                <input type="number" name="jumlah_anggota_keluarga" class="form-control" id="JumlahAnggotaKeluarga" placeholder="Jumlah Anggota Keluarga" value="<?= $row['jumlah_anggota_keluarga'] ?>" />
+                                <input type="date" name="tanggal_lahir" class="form-control" id="tanggalLahir" placeholder="Tanggal Lahir Kepala Keluarga" value="<?= $row['tanggal_lahir'] ?>" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 mt-3">Kecamatan</label>
+                            <div class="col-md-9">
+                                <select name="kecamatan_id" id="KecamatanId" class="form-control">
+                                    <?php
+                                        while ($kecamatanId = $resultKecamatan->fetch_array()) :
+                                    ?>
+                                    <option value="<?= $kecamatanId['id'] ?>" <?= $row['kecamatan_id'] == $kecamatanId['id'] ? 'selected' : ''  ?>><?= $kecamatanId['kecamatan'] ?></option>
+                                    <?php
+                                        endwhile;
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 mt-3">Kelurahan</label>
+                            <div class="col-md-9">
+                                <select name="kelurahan_id" id="KecamatanId" class="form-control">
+                                    <?php
+                                        while ($kelurahanId = $resultKelurahan->fetch_array()) :
+                                    ?>
+                                    <option value="<?= $kelurahanId['id'] ?>" <?= $row['kelurahan_id'] == $kelurahanId['id'] ? 'selected' : ''  ?>><?= $kelurahanId['kelurahan'] ?></option>
+                                    <?php
+                                        endwhile;
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 mt-3">RT</label>
+                            <div class="col-md-9">
+                                <select name="rt_id" id="RtId" class="form-control">
+                                    <?php
+                                        while ($rtId = $resultRt->fetch_array()) :
+                                    ?>
+                                    <option value="<?= $rtId['id'] ?>"  <?= $row['rt_id'] == $rtId['id'] ? 'selected' : ''  ?>><?= $rtId['rt'] ?></option>
+                                    <?php
+                                        endwhile;
+                                    ?>
+                                </select>
                             </div>
                         </div>
                     </div>

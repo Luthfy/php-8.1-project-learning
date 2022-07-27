@@ -26,15 +26,13 @@
                             
                         $id = $_POST['id'];
 
-                        $query = "DELETE FROM tb_kriteria WHERE id = '$id'";
+                        $query = "DELETE FROM kriteria WHERE id = '$id'";
 
                         $result = $connection->query($query);
                     }
 
                 ?>
-                <script type="text/javascript">
-                    window.location.href = location.origin + location.pathname + "?page=kriteria";
-                </script>
+                <a href="<?= $_SERVER['PHP_SELF'] . '?page=kriteria' ?>">Kembali Kehalaman Index</a>
             </div>
         </div>
     </div>

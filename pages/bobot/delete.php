@@ -26,14 +26,14 @@
                             
                         $id = $_POST['id'];
 
-                        $query = "DELETE FROM tb_kriteria WHERE id = '$id'";
+                        $query = "DELETE FROM tb_bobot WHERE id = '$id'";
 
                         $result = $connection->query($query);
                     }
 
                 ?>
                 <script type="text/javascript">
-                    window.location.href = location.origin + location.pathname + "?page=kriteria";
+                    window.location.href = location.origin + location.pathname + location.search.replace("bobot-hapus&kriteria", "kriteria-detail&id");
                 </script>
             </div>
         </div>

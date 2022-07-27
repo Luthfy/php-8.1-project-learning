@@ -26,13 +26,15 @@
                             
                         $id = $_POST['id'];
 
-                        $query = "DELETE FROM keluarga WHERE id = '$id'";
+                        $query = "DELETE FROM tb_kepkel WHERE id = '$id'";
 
                         $result = $connection->query($query);
                     }
 
                 ?>
-                <a href="<?= $_SERVER['PHP_SELF'] . '?page=keluarga' ?>">Kembali Kehalaman Index</a>
+                <script type="text/javascript">
+                    window.location.href = location.origin + location.pathname + "?page=keluarga";
+                </script>
             </div>
         </div>
     </div>

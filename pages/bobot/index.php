@@ -1,6 +1,6 @@
 <?php
 
-    $query = "SELECT tb_kepkel.*, tb_kelurahan.kelurahan, tb_kecamatan.kecamatan, tb_rt.rt FROM tb_kepkel LEFT JOIN tb_kelurahan ON tb_kepkel.kelurahan_id=tb_kelurahan.id LEFT JOIN tb_kecamatan ON tb_kepkel.kecamatan_id=tb_kecamatan.id LEFT JOIN tb_rt ON tb_kepkel.rt_id=tb_rt.id";
+    $query = "SELECT * FROM kriteria";
 
     $result = $connection->query($query);
 
@@ -9,13 +9,13 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Master Keluarga</h4>
+            <h4 class="page-title">Master Kriteria</h4>
             <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= $_SERVER['PHP_SELF'] . '?page=dashboard' ?>">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Keluarga
+                            Kriteria
                         </li>
                     </ol>
                 </nav>
@@ -30,22 +30,19 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
-                        <b>DAFTAR KEPALA KELUARGA</b> 
-                        <a href="<?= $_SERVER['PHP_SELF'] . '?page=keluarga-tambah' ?>" class="text-primary"><span class="fas fa-plus"></span></a>
+                        <b>DAFTAR KEPALA KRITERIA</b> 
+                        <a href="<?= $_SERVER['PHP_SELF'] . '?page=kriteria-tambah' ?>" class="text-danger"><span class="fas fa-plus"></span></a>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                <tr class="text-center">
+                                <tr>
                                     <th scope="col">No</th>
-                                    <th scope="col">NIK</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">TANGGAL LAHIR</th>
-                                    <th scope="col">RT</th>
-                                    <th scope="col">KELURAHAN</th>
-                                    <th scope="col">RT  </th>
+                                    <th scope="col">Kode Kriteria</th>
+                                    <th scope="col">Nama Kriteria</th>
+                                    <th scope="col">Deskripsi kriteria</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -56,15 +53,13 @@
                                 ?>
                                 <tr>
                                     <td scope="col"><?= $i++; ?></td>
-                                    <td><?= $data['nik'] ?></td>
-                                    <td><?= $data['nama'] ?></td>
-                                    <td><?= $data['tanggal_lahir'] ?></td>
-                                    <td><?= $data['rt'] ?></td>
-                                    <td><?= $data['kelurahan'] ?></td>
-                                    <td><?= $data['kecamatan'] ?></td>
-                                    <td class="text-center">
-                                        <a href="<?= $_SERVER['PHP_SELF'] . '?page=keluarga-edit&id=' . $data['id'] ?>" class="btn btn-sm btn-success text-white"><span class="fas fa-edit"></span></a>
-                                        <form action="<?= $_SERVER['PHP_SELF'] . '?page=keluarga-hapus' ?>" method="post" class="d-inline-block">
+                                    <td><?= $data['kode_kriteria'] ?></td>
+                                    <td><?= $data['nama_kriteria'] ?></td>
+                                    <td><?= $data['deskripsi_kriteria'] ?></td>
+                                    <td>
+                                        <a href="<?= $_SERVER['PHP_SELF'] . '?page=kriteria-detail&id=' . $data['id'] ?>" class="btn btn-sm btn-primary text-white"><span class="fas fa-eye"></span></a>
+                                        <a href="<?= $_SERVER['PHP_SELF'] . '?page=kriteria-edit&id=' . $data['id'] ?>" class="btn btn-sm btn-success text-white"><span class="fas fa-edit"></span></a>
+                                        <form action="<?= $_SERVER['PHP_SELF'] . '?page=kriteria-hapus' ?>" method="post" class="d-inline-block">
                                             <input type="hidden" name="id" value="<?= $data['id'] ?>">
                                             <button type="submit" name="submit" value="submit" class="btn btn-sm btn-danger"><span class="fas fa-trash"></span></button>
                                         </form>

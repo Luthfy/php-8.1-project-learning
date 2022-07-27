@@ -57,7 +57,7 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="#">
                         <!-- Logo icon -->
                         <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -85,8 +85,9 @@
                     <!-- ============================================================== -->
                     <!-- Toggle which is visible on mobile only -->
                     <!-- ============================================================== -->
-                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                            class="ti-menu ti-close"></i></a>
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">\
+                        <i class="ti-menu ti-close"></i>
+                    </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -304,205 +305,137 @@
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
+
                         <li class="sidebar-item">
-                            
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
                                 aria-expanded="false">
                                 <i class="mdi mdi-receipt"></i>
-                                <span class="hide-menu">Data Master </span>
+                                <span class="hide-menu">Kuisioner </span>
                             </a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
-                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=keluarga' ?>" class="sidebar-link">
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=kuisioner' ?>" class="sidebar-link">
                                         <i class="mdi mdi-note-outline"></i>
-                                        <span class="hide-menu"> Kepala Keluarga </span>
+                                        <span class="hide-menu"> Buat Kuisioner </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=master-kriteria' ?>" class="sidebar-link">
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=isi-kuisioner' ?>" class="sidebar-link">
+                                        <i class="mdi mdi-note-outline"></i>
+                                        <span class="hide-menu"> Isi Kuisioner </span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="mdi mdi-receipt"></i>
+                                <span class="hide-menu">KMEANS </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=kriteria' ?>" class="sidebar-link">
                                         <i class="mdi mdi-note-outline"></i>
                                         <span class="hide-menu"> Kriteria </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=master-centroid' ?>" class="sidebar-link">
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=cluster' ?>" class="sidebar-link">
                                         <i class="mdi mdi-note-outline"></i>
-                                        <span class="hide-menu"> Centroid </span></a>
+                                        <span class="hide-menu"> Cluster </span></a>
                                 </li>
+
                                 <li class="sidebar-item">
-                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=master-wilayah' ?>" class="sidebar-link">
-                                        <i class="mdi mdi-note-plus"></i>
-                                        <span class="hide-menu"> Wilayah </span>
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=kalkulasi' ?>" class="sidebar-link">
+                                        <i class="mdi mdi-note-outline"></i>
+                                        <span class="hide-menu"> Kalkulasi KMEANS </span>
                                     </a>
                                 </li>
+
                                 <li class="sidebar-item">
-                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=master-wilayah' ?>" class="sidebar-link">
-                                        <i class="mdi mdi-note-plus"></i>
-                                        <span class="hide-menu"> Kelurahan </span>
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=result' ?>" class="sidebar-link">
+                                        <i class="mdi mdi-note-outline"></i>
+                                        <span class="hide-menu"> Hasil KMEANS </span>
                                     </a>
                                 </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="mdi mdi-receipt"></i>
+                                <span class="hide-menu">Laporan </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
-                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=master-wilayah' ?>" class="sidebar-link">
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=kriteria' ?>" class="sidebar-link">
+                                        <i class="mdi mdi-note-outline"></i>
+                                        <span class="hide-menu"> Tahunan </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="mdi mdi-account-multiple"></i>
+                                <span class="hide-menu">Data Keluarga </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=keluarga' ?>" class="sidebar-link">
                                         <i class="mdi mdi-note-plus"></i>
+                                        <span class="hide-menu"> Kepala Keluarga </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <i class="mdi mdi mdi-google-earth"></i>
+                                <span class="hide-menu">Wilayah </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=kecamatan' ?>" class="sidebar-link">
+                                        <i class="mdi mdi mdi-note-outline"></i>
                                         <span class="hide-menu"> Kecamatan </span>
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=master-wilayah' ?>" class="sidebar-link">
-                                        <i class="mdi mdi-note-plus"></i>
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=kelurahan' ?>" class="sidebar-link">
+                                        <i class="mdi mdi mdi-note-outline"></i>
+                                        <span class="hide-menu"> Kelurahan </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=rt' ?>" class="sidebar-link">
+                                        <i class="mdi mdi mdi-note-outline"></i>
                                         <span class="hide-menu"> RT </span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html"
-                                aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
-                                    class="hide-menu">Charts</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html"
-                                aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
-                                    class="hide-menu">Widgets</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html"
-                                aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Tables</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html"
-                                aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Full
-                                    Width</span></a>
-                        </li>
+
                         <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                                aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Forms
-                                </span></a>
+                                aria-expanded="false">
+                                <i class="mdi mdi-account"></i>
+                                <span class="hide-menu">Pengguna </span>
+                            </a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
-                                    <a href="form-basic.html" class="sidebar-link"><i
-                                            class="mdi mdi-note-outline"></i><span class="hide-menu"> Form Basic
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="form-wizard.html" class="sidebar-link"><i
-                                            class="mdi mdi-note-plus"></i><span class="hide-menu"> Form Wizard
-                                        </span></a>
+                                    <a href="<?= $_SERVER['PHP_SELF'] . '?page=user' ?>" class="sidebar-link">
+                                        <i class="mdi mdi-account"></i>
+                                        <span class="hide-menu"> Pengguna </span>
+                                    </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-buttons.html"
-                                aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span
-                                    class="hide-menu">Buttons</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                                aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Icons
-                                </span></a>
-                            <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item">
-                                    <a href="icon-material.html" class="sidebar-link"><i
-                                            class="mdi mdi-emoticon"></i><span class="hide-menu"> Material Icons
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="icon-fontawesome.html" class="sidebar-link"><i
-                                            class="mdi mdi-emoticon-cool"></i><span class="hide-menu"> Font Awesome
-                                            Icons </span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-elements.html"
-                                aria-expanded="false"><i class="mdi mdi-pencil"></i><span
-                                    class="hide-menu">Elements</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                                aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span
-                                    class="hide-menu">Addons </span></a>
-                            <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item">
-                                    <a href="index2.html" class="sidebar-link"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard-2
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="pages-gallery.html" class="sidebar-link"><i
-                                            class="mdi mdi-multiplication-box"></i><span class="hide-menu"> Gallery
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="pages-calendar.html" class="sidebar-link"><i
-                                            class="mdi mdi-calendar-check"></i><span class="hide-menu"> Calendar
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="pages-invoice.html" class="sidebar-link"><i
-                                            class="mdi mdi-bulletin-board"></i><span class="hide-menu"> Invoice
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="pages-chat.html" class="sidebar-link"><i
-                                            class="mdi mdi-message-outline"></i><span class="hide-menu"> Chat Option
-                                        </span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                                aria-expanded="false"><i class="mdi mdi-account-key"></i><span
-                                    class="hide-menu">Authentication </span></a>
-                            <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item">
-                                    <a href="authentication-login.html" class="sidebar-link"><i
-                                            class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Login </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="authentication-register.html" class="sidebar-link"><i
-                                            class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Register
-                                        </span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                                aria-expanded="false"><i class="mdi mdi-alert"></i><span class="hide-menu">Errors
-                                </span></a>
-                            <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item">
-                                    <a href="error-403.html" class="sidebar-link"><i
-                                            class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 403
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="error-404.html" class="sidebar-link"><i
-                                            class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 404
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="error-405.html" class="sidebar-link"><i
-                                            class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 405
-                                        </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="error-500.html" class="sidebar-link"><i
-                                            class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Error 500
-                                        </span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item p-3">
-                            <a href="https://github.com/wrappixel/matrix-admin-bt5" target="_blank" class="
-                    w-100
-                    btn btn-cyan
-                    d-flex
-                    align-items-center
-                    text-white
-                  "><i class="mdi mdi-cloud-download font-20 me-2"></i>Download
-                                Free</a>
                         </li>
                     </ul>
                 </nav>
@@ -542,18 +475,105 @@
                     include_once 'pages/keluarga/delete.php';
                     break;
 
-                // manajemen master keluarga
+                // manajemen jumlah cluster
+                case 'cluster':
+                    include_once 'pages/cluster/index.php';
+                    break;
+                case 'cluster-tambah':
+                    include_once 'pages/cluster/add.php';
+                    break;
+                case 'cluster-edit':
+                    include_once 'pages/cluster/edit.php';
+                    break;
+                case 'cluster-hapus':
+                    include_once 'pages/cluster/delete.php';
+                    break;
+
+                // manajemen kriteria
                 case 'kriteria':
                     include_once 'pages/kriteria/index.php';
                     break;
                 case 'kriteria-tambah':
                     include_once 'pages/kriteria/add.php';
                     break;
+                case 'kriteria-detail':
+                    include_once 'pages/kriteria/show.php';
+                    break;
                 case 'kriteria-edit':
                     include_once 'pages/kriteria/edit.php';
                     break;
                 case 'kriteria-hapus':
                     include_once 'pages/kriteria/delete.php';
+                    break;
+
+                // manajemen bobot
+                case 'bobot':
+                    include_once 'pages/bobot/index.php';
+                    break;
+                case 'bobot-tambah':
+                    include_once 'pages/bobot/add.php';
+                    break;
+                case 'bobot-edit':
+                    include_once 'pages/bobot/edit.php';
+                    break;
+                case 'bobot-hapus':
+                    include_once 'pages/bobot/delete.php';
+                    break;
+
+                // manajemen kecamatan
+                case 'kecamatan':
+                    include_once 'pages/kecamatan/index.php';
+                    break;
+                case 'kecamatan-tambah':
+                    include_once 'pages/kecamatan/add.php';
+                    break;
+                case 'kecamatan-edit':
+                    include_once 'pages/kecamatan/edit.php';
+                    break;
+                case 'kecamatan-hapus':
+                    include_once 'pages/kecamatan/delete.php';
+                    break;
+
+                // manajemen kelurahan
+                case 'kelurahan':
+                    include_once 'pages/kelurahan/index.php';
+                    break;
+                case 'kelurahan-tambah':
+                    include_once 'pages/kelurahan/add.php';
+                    break;
+                case 'kelurahan-edit':
+                    include_once 'pages/kelurahan/edit.php';
+                    break;
+                case 'kelurahan-hapus':
+                    include_once 'pages/kelurahan/delete.php';
+                    break;
+
+                // manajemen rt
+                case 'rt':
+                    include_once 'pages/rt/index.php';
+                    break;
+                case 'rt-tambah':
+                    include_once 'pages/rt/add.php';
+                    break;
+                case 'rt-edit':
+                    include_once 'pages/rt/edit.php';
+                    break;
+                case 'rt-hapus':
+                    include_once 'pages/rt/delete.php';
+                    break;
+
+                // manajemen user
+                case 'user':
+                    include_once 'pages/user/index.php';
+                    break;
+                case 'user-tambah':
+                    include_once 'pages/user/add.php';
+                    break;
+                case 'user-edit':
+                    include_once 'pages/user/edit.php';
+                    break;
+                case 'user-hapus':
+                    include_once 'pages/user/delete.php';
                     break;
                 
                 default:
@@ -603,7 +623,7 @@
     <script src="assets/libs/flot/jquery.flot.stack.js"></script>
     <script src="assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="assets/dist/js/pages/chart/chart-page-init.js"></script>
+    <!-- <script src="assets/dist/js/pages/chart/chart-page-init.js"></script> -->
 
     <!-- this page js -->
     <script src="assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
@@ -614,6 +634,37 @@
        *       Basic Table                   *
        ****************************************/
       $("#zero_config").DataTable();
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+
+        });
+
+
+        function getAjax(url_input, type = "GET", body = {})
+        {
+            $.ajax({
+                url: url_input,
+                type: type,
+                data: body,
+                success: function (result) {
+                    console.log(result)
+                }
+            });
+        }
+
+        function writeSelectOption(items, domObject)
+        {
+            var html = "";
+
+            items.forEach(function (x, i) {
+                html += "<option>tes</option>";
+            });
+
+            domObject.html(html);
+        }
     </script>
 </body>
 

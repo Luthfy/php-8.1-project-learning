@@ -1,12 +1,12 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Hapus Kriteria</h4>
+            <h4 class="page-title">Hapus Kelurahan</h4>
             <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?= $_SERVER['PHP_SELF'] . '?page=dashboard' ?>">Home</a></li>
-                        <li class="breadcrumb-item"><a href="<?= $_SERVER['PHP_SELF'] . '?page=keluarga' ?>">Keluarga</a></li>
+                        <li class="breadcrumb-item"><a href="<?= $_SERVER['PHP_SELF'] . '?page=kelurahan' ?>">Kelurahan</a></li>
                         <li class="breadcrumb-item active" aria-current="page">
                             Hapus
                         </li>
@@ -23,17 +23,17 @@
             <div class="card">
                 <?php
                     if (@$_POST['submit']) {
-                            
+
                         $id = $_POST['id'];
 
-                        $query = "DELETE FROM tb_kriteria WHERE id = '$id'";
+                        $query = "DELETE FROM tb_kelurahan WHERE id = '$id'";
 
                         $result = $connection->query($query);
                     }
 
                 ?>
                 <script type="text/javascript">
-                    window.location.href = location.origin + location.pathname + "?page=kriteria";
+                    window.location.href = location.origin + location.pathname + "?page=kelurahan";
                 </script>
             </div>
         </div>

@@ -1,20 +1,22 @@
 
 <?php
 
+$queryKecamatan = "SELECT * FROM tb_kecamatan";
+$resultKecamatan = $connection->query($queryKecamatan);
+
 if (@$_POST['submit']) {
         
-    $kode       = $_POST['kode_kriteria'];
-    $nama       = $_POST['nama_kriteria'];
-    $deskripsi  = $_POST['deskripsi_kriteria'];
+    $kelurahan = $_POST['kelurahan'];
+    $kecamatan = $_POST['kecamatan_id'];
 
-    $query = "INSERT INTO tb_kriteria(kode, nama, deskripsi) VALUES ('$kode', '$nama', '$deskripsi')";
+    $query = "INSERT INTO tb_kelurahan(kelurahan, kecamatan_id) VALUES ('$kelurahan', '$kecamatan')";
 
     $result = $connection->query($query);
 
     if ($result) {
         ?>
         <script type="text/javascript">
-            window.location.href = location.origin + location.pathname + "?page=kriteria";
+            window.location.href = location.origin + location.pathname + "?page=kelurahan";
         </script>
         <?php
     }
@@ -26,12 +28,12 @@ if (@$_POST['submit']) {
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Tambah Kriteria</h4>
+            <h4 class="page-title">Tambah Kelurahan</h4>
             <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="<?= $_SERVER['PHP_SELF'] . '?page=dashboard' ?>">Home</a></li>
-                        <li class="breadcrumb-item"><a href="<?= $_SERVER['PHP_SELF'] . '?page=kriteria' ?>">Kriteria</a></li>
+                        <li class="breadcrumb-item"><a href="<?= $_SERVER['PHP_SELF'] . '?page=kelurahan' ?>">Kelurahan</a></li>
                         <li class="breadcrumb-item active" aria-current="page">
                             Tambah
                         </li>
@@ -46,29 +48,31 @@ if (@$_POST['submit']) {
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <form action="<?= $_SERVER['PHP_SELF'] . '?page=kriteria-tambah' ?>" method="post">
+                <form action="<?= $_SERVER['PHP_SELF'] . '?page=kelurahan-tambah' ?>" method="post">
                     <div class="card-header">
                         <div class="d-flex justify-content-between">
-                            <b>TAMBAH KRITERIA</b>
+                            <b>TAMBAH KELURAHAN</b> 
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-md-3 mt-3">Kode Kriteria</label>
+                            <label class="col-md-3 mt-3">Kelurahan</label>
                             <div class="col-md-9">
-                                <input type="text" name="kode_kriteria" class="form-control" id="KodeKriteria" placeholder="Kode Kriteria" />
+                                <input type="text" name="kelurahan" class="form-control" id="kelurahan" placeholder="Kelurahan" />
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-3 mt-3">Nama Kriteria</label>
+                            <label class="col-md-3 mt-3">Kecamatan</label>
                             <div class="col-md-9">
-                                <input type="text" name="nama_kriteria" class="form-control" id="Nama Kriteria" placeholder="Nama Kriteria" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-md-3 mt-3">Deskripsi Kriteria</label>
-                            <div class="col-md-9">
-                                <textarea name="deskripsi_kriteria" id="DeskripsiKriteria" cols="30" rows="10" class="form-control" placeholder="Deskripsi Kriteria"></textarea>
+                                <select name="kecamatan_id" id="KecamatanId" class="form-control">
+                                    <?php
+                                        while ($data = $resultKecamatan->fetch_array()) :
+                                    ?>
+                                    <option value="<?= $data['id'] ?>"><?= $data['kecamatan'] ?></option>
+                                    <?php
+                                        endwhile;
+                                    ?>
+                                </select>
                             </div>
                         </div>
                     </div>

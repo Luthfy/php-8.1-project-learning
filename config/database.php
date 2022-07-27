@@ -1,5 +1,5 @@
 <?php
-    $connection = new mysqli("localhost","root","","ta_kmeans");
+    $connection = new mysqli("localhost","root","","ta_kmeans_v1");
 
     // Check connection
     if ($connection->connect_errno) {
